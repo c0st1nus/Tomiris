@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using XNode;
 
-[CreateAssetMenu]
+[CreateAssetMenu(fileName = "New Story", menuName = "VisualNovella/New Story")]
 public class Dialogs : NodeGraph { 
 	
 }
