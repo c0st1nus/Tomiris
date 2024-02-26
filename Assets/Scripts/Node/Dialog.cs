@@ -6,7 +6,6 @@ public class Dialog : Node
 	[Input] public bool input;
 	[Output] public bool output;
 	[SerializeField] public Personage personage;
-	[SerializeField] public Vector2 personagePosition;
 	[SerializeField] [TextArea(5, 10)] private string text;
 
 	public string Name => name;

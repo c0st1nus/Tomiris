@@ -6,7 +6,7 @@ using XNode;
 [DisallowMultipleNodesAttribute]
 public class StoryStartNode : Node {
 
-    [Output(ShowBackingValue.Never, ConnectionType.Override)] public bool exit;
+    [Output(ShowBackingValue.Never, ConnectionType.Override)] public bool output;
 	public Sprite background;
 
     // Use this for initialization
