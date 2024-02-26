@@ -23,6 +23,7 @@ ExportedObj/
 *.pidb
 *.booproj
 *.svd
+*.unity.meta
 *.pdb
 *.mdb
 *.opendb
