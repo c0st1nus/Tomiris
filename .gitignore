@@ -27,6 +27,7 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.meta
 
 # ============ #
 # OS generated #
@@ -49,7 +50,6 @@ Thumbs.db
 # ========================= #
 # Unity specific extensions #
 # ========================= #
-*.unity
 *.asset
 *.mat
 *.anim
