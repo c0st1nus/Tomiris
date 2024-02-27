@@ -51,7 +51,6 @@ Thumbs.db
 # ========================= #
 # Unity specific extensions #
 # ========================= #
-*.asset
 *.mat
 *.anim
 *.prefab
