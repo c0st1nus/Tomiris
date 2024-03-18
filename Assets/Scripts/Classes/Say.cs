@@ -248,18 +248,20 @@ public class Say : MonoBehaviour
         playerImage.color= new Color(playerImage.color.r, playerImage.color.g, playerImage.color.b, 1f);
         playerImage.gameObject.SetActive(true);
         playerImage.sprite = dialog.personage.image != null ? dialog.personage.image : null;
+        RectTransform player = playerImage.GetComponent<RectTransform>();
+        player.localPosition = dialog.leftPos? new Vector3(-143, player.localPosition.y) : new Vector3(125, player.localPosition.y);
         txRect.anchorMin = new Vector2(0.5f, 0);
         txRect.anchorMax = new Vector2(0.5f, 0);
         txRect.pivot = new Vector2(0.5f, 0);
-        txRect.anchoredPosition = new Vector2(0, 0);
+        txRect.anchoredPosition = new Vector2(15, 5);
         childRect.anchorMin = new Vector2(0, 1);
         childRect.anchorMax = new Vector2(0, 1);
         childRect.pivot = new Vector2(0, 1);
-        childRect.anchoredPosition = new Vector2(50, -30);
         TMP_Text tx = text.transform.GetChild(0).GetComponent<TMP_Text>();
         tx.text = dialog.Text + "\n s";
-        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(875, tx.preferredHeight);
-        text.GetComponent<RectTransform>().sizeDelta = new Vector2(900, tx.preferredHeight + 100);
+        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(850, tx.preferredHeight);
+        text.GetComponent<RectTransform>().sizeDelta = new Vector2(900, tx.preferredHeight + 125);
+        childRect.anchoredPosition = new Vector2(50f, text.GetComponent<RectTransform>().sizeDelta.y * -0.083333333f);
         tx.text = "";
         ShowText(dialog.Text, text);
     }
@@ -275,7 +277,7 @@ public class Say : MonoBehaviour
         authorRect.anchorMin = new Vector2(0.5f, 0.5f);
         authorRect.anchorMax = new Vector2(0.5f, 0.5f);
         authorRect.pivot = new Vector2(0.5f, 0.5f);
-        authorRect.anchoredPosition = new Vector2(0, 0);
+        authorRect.anchoredPosition = new Vector2(0, 15);
         author.SetActive(true);
         text.SetActive(false);
         playerImage.color= new Color(playerImage.color.r, playerImage.color.g, playerImage.color.b, 0f);
