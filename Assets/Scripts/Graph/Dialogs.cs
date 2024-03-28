@@ -7,4 +7,6 @@ using XNode;
 public class Dialogs : NodeGraph { 
 	public Sprite storyPreview;
 	public string storyName;
+	public string storyDescription;
+	public string[] storyTags;
 }

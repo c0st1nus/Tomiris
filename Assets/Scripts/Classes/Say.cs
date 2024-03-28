@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using XNode;
 using Button = UnityEngine.UI.Button;
@@ -20,7 +21,7 @@ public class Say : MonoBehaviour
     [SerializeField] private GameObject author;
     private void Start()
     {
-        dialogs ??= StoryPanel.currentStory;
+        dialogs ??= GameManager.currentstory;
         NextDialog();
     }
 
@@ -79,8 +80,9 @@ public class Say : MonoBehaviour
                     NextDialog();
                     break;
                 }
-                case StoryEndNode: {
-                    print("End");
+                case StoryEndNode:
+                {
+                    SceneManager.LoadScene(0);
                     break;
                 }
             }
@@ -249,6 +251,8 @@ public class Say : MonoBehaviour
         playerImage.gameObject.SetActive(true);
         playerImage.sprite = dialog.personage.image != null ? dialog.personage.image : null;
         RectTransform player = playerImage.GetComponent<RectTransform>();
+        float par = dialog.personage.image.rect.width / dialog.personage.image.rect.height;
+        player.sizeDelta = new Vector2(dialog.personage.height * par, dialog.personage.height);
         player.localPosition = dialog.leftPos? new Vector3(-143, player.localPosition.y) : new Vector3(125, player.localPosition.y);
         txRect.anchorMin = new Vector2(0.5f, 0);
         txRect.anchorMax = new Vector2(0.5f, 0);
@@ -259,7 +263,7 @@ public class Say : MonoBehaviour
         childRect.pivot = new Vector2(0, 1);
         TMP_Text tx = text.transform.GetChild(0).GetComponent<TMP_Text>();
         tx.text = dialog.Text + "\n s";
-        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(850, tx.preferredHeight);
+        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(750, tx.preferredHeight);
         text.GetComponent<RectTransform>().sizeDelta = new Vector2(900, tx.preferredHeight + 125);
         childRect.anchoredPosition = new Vector2(50f, text.GetComponent<RectTransform>().sizeDelta.y * -0.083333333f);
         tx.text = "";
@@ -283,7 +287,7 @@ public class Say : MonoBehaviour
         playerImage.color= new Color(playerImage.color.r, playerImage.color.g, playerImage.color.b, 0f);
         TMP_Text tx = author.transform.GetChild(0).GetComponent<TMP_Text>();
         tx.text = aT.text + "\n s";
-        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(875, tx.preferredHeight);
+        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(750, tx.preferredHeight);
         author.GetComponent<RectTransform>().sizeDelta = new Vector2(900, tx.preferredHeight + 30);
         tx.text = "";
         ShowText(aT.text, author);

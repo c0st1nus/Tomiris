@@ -8,4 +8,5 @@ public class Personage : ScriptableObject
 {
     public new string name;
     public Sprite image;
+    public int height;
 }
