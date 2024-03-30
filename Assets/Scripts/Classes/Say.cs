@@ -44,6 +44,7 @@ public class Say : MonoBehaviour
                 case StoryStartNode storyStartNode: {
                     if(storyStartNode.background != null)
                     {
+                        background.type = Image.Type.Tiled;
                         ChangeBackground(storyStartNode.background);
                     }
                     _dialog = _dialog.GetOutputPort("output").Connection.node;
@@ -75,9 +76,16 @@ public class Say : MonoBehaviour
                 }
                 case BackGroundChange backGroundChange:
                 {
+                    background.type = Image.Type.Tiled;
                     ChangeBackground(backGroundChange.background);
                     _dialog = _dialog.GetOutputPort("output").Connection.node;
                     NextDialog();
+                    break;
+                }
+                case Scene scene:
+                {
+                    Scene(scene);
+                    _dialog = _dialog.GetOutputPort("output").Connection.node;
                     break;
                 }
                 case StoryEndNode:
@@ -243,7 +251,7 @@ public class Say : MonoBehaviour
     }
     
     private void ShowDialog(Dialog dialog)
-    {
+    {   float screen_comp2 = Screen.height / 1920f;
         RectTransform txRect = text.transform.GetChild(0).GetComponent<RectTransform>();
         RectTransform childRect = text.transform.GetChild(1).GetComponent<RectTransform>();
         text.transform.GetChild(1).GetChild(0).GetComponent<TMP_Text>().text = dialog.personage.name;
@@ -251,8 +259,8 @@ public class Say : MonoBehaviour
         playerImage.gameObject.SetActive(true);
         playerImage.sprite = dialog.personage.image != null ? dialog.personage.image : null;
         RectTransform player = playerImage.GetComponent<RectTransform>();
-        float par = dialog.personage.image.rect.width / dialog.personage.image.rect.height;
-        player.sizeDelta = new Vector2(dialog.personage.height * par, dialog.personage.height);
+        float par = dialog.personage.image.rect.width / (dialog.personage.image.rect.height * screen_comp2);
+        player.sizeDelta = new Vector2(dialog.personage.height * par, dialog.personage.height / screen_comp2);
         player.localPosition = dialog.leftPos? new Vector3(-143, player.localPosition.y) : new Vector3(125, player.localPosition.y);
         txRect.anchorMin = new Vector2(0.5f, 0);
         txRect.anchorMax = new Vector2(0.5f, 0);
@@ -263,8 +271,10 @@ public class Say : MonoBehaviour
         childRect.pivot = new Vector2(0, 1);
         TMP_Text tx = text.transform.GetChild(0).GetComponent<TMP_Text>();
         tx.text = dialog.Text + "\n s";
-        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(750, tx.preferredHeight);
-        text.GetComponent<RectTransform>().sizeDelta = new Vector2(900, tx.preferredHeight + 125);
+        float screen_comp = Screen.width / 1080f;
+        
+        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(750 * screen_comp, tx.preferredHeight);
+        text.GetComponent<RectTransform>().sizeDelta = new Vector2(800 * screen_comp, tx.preferredHeight + 100 * screen_comp2);
         childRect.anchoredPosition = new Vector2(50f, text.GetComponent<RectTransform>().sizeDelta.y * -0.083333333f);
         tx.text = "";
         ShowText(dialog.Text, text);
@@ -287,10 +297,18 @@ public class Say : MonoBehaviour
         playerImage.color= new Color(playerImage.color.r, playerImage.color.g, playerImage.color.b, 0f);
         TMP_Text tx = author.transform.GetChild(0).GetComponent<TMP_Text>();
         tx.text = aT.text + "\n s";
-        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(750, tx.preferredHeight);
-        author.GetComponent<RectTransform>().sizeDelta = new Vector2(900, tx.preferredHeight + 30);
+        float screen_comp = Screen.width / 1080f;
+        float screen_comp2 = Screen.height / 1920f;
+        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(750 * screen_comp, tx.preferredHeight);
+        author.GetComponent<RectTransform>().sizeDelta = new Vector2(850 * screen_comp, tx.preferredHeight + 30);
         tx.text = "";
         ShowText(aT.text, author);
+    }
+
+    public void Scene(Scene scene)
+    {
+        background.type = Image.Type.Sliced;
+        ChangeBackground(scene.scene);
     }
     
     public void OnButtonClick(int index)

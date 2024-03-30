@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Name: Story Start
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -840, y: -200}
+  position: {x: -1016, y: -264}
   ports:
     keys:
     - output
@@ -125,12 +125,58 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: input
-        node: {fileID: 3897172213651554340}
+        node: {fileID: -4364414152678042719}
         reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
+  output: 0
+  background: {fileID: 21300000, guid: 257a613ff87fa6992971607e68de85d9, type: 3}
+--- !u!114 &-7566894679238583924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a328c8efd6223ffc991bfe2fb53e3c7, type: 3}
+  m_Name: Back Ground Change
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -856, y: -168}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: -7566894679238583924}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: output
+        node: {fileID: -4364414152678042719}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -7566894679238583924}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: 3897172213651554340}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: 0
   output: 0
   background: {fileID: 21300000, guid: 257a613ff87fa6992971607e68de85d9, type: 3}
 --- !u!114 &-6479099661757136990
@@ -224,6 +270,52 @@ MonoBehaviour:
   personage: {fileID: 11400000, guid: 53a1445cbf13ecca9ad853c8e80bb72b, type: 2}
   text: "\u041F\u0440\u0438\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E \u043C\u043E\u0439
     \u0434\u0440\u0443\u0433!"
+--- !u!114 &-4364414152678042719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e8a0b14737ead13a635f06df8ecfa5, type: 3}
+  m_Name: Scene
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -776, y: -328}
+  ports:
+    keys:
+    - input
+    - output
+    values:
+    - _fieldName: input
+      _node: {fileID: -4364414152678042719}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: output
+        node: {fileID: -8355552222702744684}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: output
+      _node: {fileID: -4364414152678042719}
+      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: input
+        node: {fileID: -7566894679238583924}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  input: 0
+  output: 0
+  scene: {fileID: 21300000, guid: 62fe804fe4f61cb008156e37240b8329, type: 3}
 --- !u!114 &-4354547300559116634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,7 +329,7 @@ MonoBehaviour:
   m_Name: Story End
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 1707.1671, y: -5.9053955}
+  position: {x: 1016, y: -56}
   ports:
     keys:
     - enter
@@ -248,7 +340,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: output
-        node: {fileID: 8087944677413522515}
+        node: {fileID: 3555866869191438968}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -383,59 +475,13 @@ MonoBehaviour:
   - {fileID: -6479099661757136990}
   - {fileID: -3476688557426446105}
   - {fileID: 3555866869191438968}
-  - {fileID: 1320488786224320849}
-  - {fileID: 8087944677413522515}
   - {fileID: -4354547300559116634}
+  - {fileID: -4364414152678042719}
+  - {fileID: -7566894679238583924}
   storyPreview: {fileID: 21300000, guid: 257a613ff87fa6992971607e68de85d9, type: 3}
   storyName: Tomiris
---- !u!114 &1320488786224320849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 698c3009e4bbdc120925455aaed6d7a7, type: 3}
-  m_Name: Dialog
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1106.6366, y: -93.298584}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 1320488786224320849}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: output
-        node: {fileID: 3555866869191438968}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 1320488786224320849}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: input
-        node: {fileID: 8087944677413522515}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  input: 0
-  output: 0
-  personage: {fileID: 11400000, guid: 47c079f1144e85d438d9e243167fe1e9, type: 2}
-  text: "\u0414\u0430 \u0431\u0443\u0434\u0435\u0442 \u043F\u0440\u0430\u0432\u043E\u0441\u0443\u0434\u0438\u0435!"
-  leftPos: 1
+  storyDescription: 
+  storyTags: []
 --- !u!114 &3179931601640761148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,8 +616,8 @@ MonoBehaviour:
       _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
       connections:
-      - fieldName: input
-        node: {fileID: 1320488786224320849}
+      - fieldName: enter
+        node: {fileID: -4354547300559116634}
         reroutePoints: []
       _direction: 1
       _connectionType: 0
@@ -609,7 +655,7 @@ MonoBehaviour:
         PublicKeyToken=b77a5c561934e089
       connections:
       - fieldName: output
-        node: {fileID: -8355552222702744684}
+        node: {fileID: -7566894679238583924}
         reroutePoints: []
       _direction: 0
       _connectionType: 0
@@ -786,54 +832,6 @@ MonoBehaviour:
     \u043C\u0443\u0436\u0447\u0438\u043D\u044B, \u0447\u0435\u0439 \u0432\u0437\u0433\u043B\u044F\u0434
     \u0432\u044B\u0440\u0430\u0436\u0430\u0435\u0442 \u0438\u0441\u0445\u043E\u0434
     \u0432\u0435\u043B\u0438\u043A\u043E\u0439 \u0431\u0438\u0442\u0432\u044B"
---- !u!114 &8087944677413522515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 698c3009e4bbdc120925455aaed6d7a7, type: 3}
-  m_Name: Dialog
-  m_EditorClassIdentifier: 
-  graph: {fileID: 11400000}
-  position: {x: 1428.9885, y: -44.263733}
-  ports:
-    keys:
-    - input
-    - output
-    values:
-    - _fieldName: input
-      _node: {fileID: 8087944677413522515}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: output
-        node: {fileID: 1320488786224320849}
-        reroutePoints: []
-      _direction: 0
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-    - _fieldName: output
-      _node: {fileID: 8087944677413522515}
-      _typeQualifiedName: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      connections:
-      - fieldName: enter
-        node: {fileID: -4354547300559116634}
-        reroutePoints: []
-      _direction: 1
-      _connectionType: 0
-      _typeConstraint: 0
-      _dynamic: 0
-  input: 0
-  output: 0
-  personage: {fileID: 11400000, guid: 45fb4b8811f523d43bfc1214347f4913, type: 2}
-  text: "\u0410 \u044F \u0431\u0430\u0442\u044F"
-  leftPos: 1
 --- !u!114 &8791868968783629984
 MonoBehaviour:
   m_ObjectHideFlags: 0
