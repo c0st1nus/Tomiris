@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Tomiris
   m_EditorClassIdentifier: 
   name: "\u0422\u043E\u043C\u0438\u0440\u0438\u0441"
-  image: {fileID: 21300000, guid: d20607a36d3a3239b8aa73fea614ef65, type: 3}
+  image: {fileID: 21300000, guid: ab156b88537474941a6e59ccc2ef5775, type: 3}
   height: 2000

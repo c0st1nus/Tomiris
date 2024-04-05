@@ -274,7 +274,7 @@ public class Say : MonoBehaviour
         float screen_comp = Screen.width / 1080f;
         
         tx.GetComponent<RectTransform>().sizeDelta = new Vector2(750 * screen_comp, tx.preferredHeight);
-        text.GetComponent<RectTransform>().sizeDelta = new Vector2(800 * screen_comp, tx.preferredHeight + 100 * screen_comp2);
+        text.GetComponent<RectTransform>().sizeDelta = new Vector2(800 * screen_comp, tx.preferredHeight + 130 * screen_comp2);
         childRect.anchoredPosition = new Vector2(50f, text.GetComponent<RectTransform>().sizeDelta.y * -0.083333333f);
         tx.text = "";
         ShowText(dialog.Text, text);
