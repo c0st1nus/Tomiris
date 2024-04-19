@@ -227,7 +227,7 @@ MonoBehaviour:
     FigmaScreenName: iPhone 13 & 14 - 4
     ParentSectionNodeId: 
   - FigmaNodeId: 14
-    FigmaScreenPrefab: {fileID: 6975714034205301108, guid: ebc6c57795f770811a7ec8266a01d617, type: 3}
+    FigmaScreenPrefab: {fileID: 8786182661736379256, guid: cb82cb856c9e845c8b90eaf5ccb55659, type: 3}
     FigmaScreenName: iPhone 13 & 14 - 4
     ParentSectionNodeId: 
   m_Sections: []

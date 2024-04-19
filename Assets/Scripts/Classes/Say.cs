@@ -260,8 +260,8 @@ public class Say : MonoBehaviour
         playerImage.gameObject.SetActive(true);
         playerImage.sprite = dialog.personage.image != null ? dialog.personage.image : null;
         RectTransform player = playerImage.GetComponent<RectTransform>();
-        float par = dialog.personage.image.rect.width / (dialog.personage.image.rect.height * screen_comp2);
-        player.sizeDelta = new Vector2(dialog.personage.height * par, dialog.personage.height / screen_comp2);
+        float par = dialog.personage.image.rect.width / dialog.personage.image.rect.height;
+        player.sizeDelta = new Vector2(Screen.height * 0.6f * par, Screen.height * 0.75f);
         player.localPosition = dialog.leftPos? new Vector3(-143, player.localPosition.y) : new Vector3(125, player.localPosition.y);
         txRect.anchorMin = new Vector2(0.5f, 0);
         txRect.anchorMax = new Vector2(0.5f, 0);
@@ -273,9 +273,9 @@ public class Say : MonoBehaviour
         TMP_Text tx = text.transform.GetChild(0).GetComponent<TMP_Text>();
         tx.text = dialog.Text + "\n s";
         float screen_comp = Screen.width / 1080f;
-        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(750 * screen_comp/1.25f, tx.preferredHeight);
-        text.GetComponent<RectTransform>().sizeDelta = new Vector2(850 * screen_comp/1.25f, tx.preferredHeight + childRect.sizeDelta.y + 50);
         childRect.anchoredPosition = new Vector2(50f, text.GetComponent<RectTransform>().sizeDelta.y * -0.083333333f);
+        text.GetComponent<RectTransform>().sizeDelta = new Vector2(850 * screen_comp/1.25f, tx.preferredHeight + childRect.sizeDelta.y + 50);
+        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(750 * screen_comp/1.25f, tx.preferredHeight);
         tx.text = "";
         ShowText(dialog.Text, text);
     }
