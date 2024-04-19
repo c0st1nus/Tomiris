@@ -62,7 +62,7 @@ public class Say : MonoBehaviour
                     break;
                 }
                 case Choice choice: {
-                    Choice(choice.choice);
+                    Choice(choice);
                     break;
                 }
                 case StatChange change: {
@@ -163,14 +163,15 @@ public class Say : MonoBehaviour
         playerImage.color= new Color(playerImage.color.r, playerImage.color.g, playerImage.color.b, 1f);
     }
     
-    private void Choice(string[] choice)
+    private void Choice(Choice ch)
     {
         text.gameObject.SetActive(false);
-        if (choice.Length == 0) return;
-        for (int i = 0; i < choice.Length; i++)
+        if (ch.choiceText.Length == 0) return;
+        for (int i = 0; i < ch.choiceText.Length; i++)
         {
             buttons[i].gameObject.SetActive(true);
-            buttons[i].GetComponentInChildren<TextMeshProUGUI>().text = choice[i];
+            buttons[i].transform.GetChild(1).gameObject.SetActive(ch.choicePrice[i] != 0);
+            buttons[i].GetComponentInChildren<TextMeshProUGUI>().text = ch.choiceText[i];
         }
     }
     
@@ -272,9 +273,8 @@ public class Say : MonoBehaviour
         TMP_Text tx = text.transform.GetChild(0).GetComponent<TMP_Text>();
         tx.text = dialog.Text + "\n s";
         float screen_comp = Screen.width / 1080f;
-        
-        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(750 * screen_comp, tx.preferredHeight);
-        text.GetComponent<RectTransform>().sizeDelta = new Vector2(800 * screen_comp, tx.preferredHeight + 130 * screen_comp2);
+        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(750 * screen_comp/1.25f, tx.preferredHeight);
+        text.GetComponent<RectTransform>().sizeDelta = new Vector2(850 * screen_comp/1.25f, tx.preferredHeight + childRect.sizeDelta.y + 50);
         childRect.anchoredPosition = new Vector2(50f, text.GetComponent<RectTransform>().sizeDelta.y * -0.083333333f);
         tx.text = "";
         ShowText(dialog.Text, text);
@@ -298,9 +298,8 @@ public class Say : MonoBehaviour
         TMP_Text tx = author.transform.GetChild(0).GetComponent<TMP_Text>();
         tx.text = aT.text + "\n s";
         float screen_comp = Screen.width / 1080f;
-        float screen_comp2 = Screen.height / 1920f;
-        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(750 * screen_comp, tx.preferredHeight);
-        author.GetComponent<RectTransform>().sizeDelta = new Vector2(850 * screen_comp, tx.preferredHeight + 30);
+        tx.GetComponent<RectTransform>().sizeDelta = new Vector2(800 * (screen_comp/1.25f), tx.preferredHeight);
+        author.GetComponent<RectTransform>().sizeDelta = new Vector2(850 * (screen_comp/1.25f), tx.preferredHeight + 30);
         tx.text = "";
         ShowText(aT.text, author);
     }
@@ -313,7 +312,11 @@ public class Say : MonoBehaviour
     
     public void OnButtonClick(int index)
     {
-        _dialog = _dialog.GetOutputPort($"choice {index}").Connection.node;
+        _dialog = _dialog.GetOutputPort($"choiceText {index}").Connection.node;
+        foreach (var but in buttons)
+        {
+            but.gameObject.SetActive(false);
+        }
         NextDialog();
     }
 }

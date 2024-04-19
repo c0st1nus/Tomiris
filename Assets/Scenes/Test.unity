@@ -2038,7 +2038,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b84d16afb6de78e39c1767ba57972b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+  dialogs: {fileID: 11400000, guid: fc9defda4520d1c4cbed2cedaddcc9a6, type: 2}
+=======
   dialogs: {fileID: 0}
+>>>>>>> parent of bec9a44 (New design)
   text: {fileID: 1822690226}
   delay: 0.05
   buttons:
