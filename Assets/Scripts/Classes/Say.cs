@@ -21,7 +21,7 @@ public class Say : MonoBehaviour
     [SerializeField] private GameObject author;
     private void Start()
     {
-        dialogs ??= GameManager.currentstory;
+        dialogs ??= GameManager.currentStory;
         NextDialog();
     }
 

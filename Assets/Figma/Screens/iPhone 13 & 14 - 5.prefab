@@ -6374,8 +6374,8 @@ MonoBehaviour:
   m_text: "\u0422\u043E\u043C\u0438\u0440\u0438\u0441: \u043F\u0430\u0442\u0448\u0430\u0439\u044B\u043C\u043D\u044B\u04A3
     \u043E\u049B\u0438\u0493\u0430\u0441\u044B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5306df80ae3012fa995e453bfa040360, type: 2}
-  m_sharedMaterial: {fileID: -2867767047430192423, guid: 5306df80ae3012fa995e453bfa040360, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08262fb36810e3e22b321fa027e4a0e2, type: 2}
+  m_sharedMaterial: {fileID: 7596420360845420398, guid: 08262fb36810e3e22b321fa027e4a0e2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6435,7 +6435,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -28.713806, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7600,8 +7600,8 @@ MonoBehaviour:
   m_text: "\u041E\u043B \u0431\u0438\u043B\u0456\u043A \u0435\u0442\u0443 \u04AF\u0448\u0456\u043D
     \u0434\u04AF\u043D\u0438\u0435\u0433\u0435 \u043A\u0435\u043B\u0433\u0435\u043D..."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5306df80ae3012fa995e453bfa040360, type: 2}
-  m_sharedMaterial: {fileID: -2867767047430192423, guid: 5306df80ae3012fa995e453bfa040360, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 08262fb36810e3e22b321fa027e4a0e2, type: 2}
+  m_sharedMaterial: {fileID: 7596420360845420398, guid: 08262fb36810e3e22b321fa027e4a0e2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

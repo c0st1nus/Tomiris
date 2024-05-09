@@ -5356,7 +5356,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: -0.7
@@ -7663,7 +7663,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddb8dee3ebc8c6e8ba37363e7a0a4ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  balance: {fileID: 263790497693951385}
+  lives: {fileID: 3724788912925692938}
+  uid: {fileID: 6175713705293221974}
+  usernameText: {fileID: 4989577490237551788}
   testStory: {fileID: 0}
+  username: {fileID: 0}
+  password: {fileID: 0}
 --- !u!1 &4206601670758566751
 GameObject:
   m_ObjectHideFlags: 0

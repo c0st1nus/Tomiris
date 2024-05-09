@@ -4236,7 +4236,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 258366401476342631}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: HandleDropdownChangeKZ
+        m_MethodName: HandleDropdownChangeKz
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

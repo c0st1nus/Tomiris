@@ -639,6 +639,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: iPhone 13 & 14 - 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3658283213653362839, guid: 0fa292077ba6eef08b8997e90665a668, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4440912391585872596, guid: 0fa292077ba6eef08b8997e90665a668, type: 3}
       propertyPath: m_fontAsset
       value: 
